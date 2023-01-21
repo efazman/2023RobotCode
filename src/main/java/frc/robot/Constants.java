@@ -13,5 +13,7 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-  
+    public static final class IntakeConstants {
+        public static final int INTAKE_NEO_ID = 0;
+    }
 }
