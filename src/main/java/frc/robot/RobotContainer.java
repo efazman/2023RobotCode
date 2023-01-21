@@ -6,9 +6,15 @@ package frc.robot;
 
 
 
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
+import frc.robot.Constants.JoystickConstants;
+import frc.robot.commands.TeleopDrive;
+import frc.robot.subsystems.SwerveDrivetrain;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -18,11 +24,24 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
+  private final XboxController m_driverController = new XboxController(JoystickConstants.DRIVER_PORT_ID);
   
+  boolean fieldRelative = true;
+  boolean openLoop = false;
 
+  private final SwerveDrivetrain m_swerveDrivetrain = new SwerveDrivetrain();
+
+  private final int m_translationAxis = XboxController.Axis.kLeftY.value;
+  private final int m_strafeAxis = XboxController.Axis.kLeftX.value;
+  private final int m_rotationAxis = XboxController.Axis.kRightX.value;
+
+  private final JoystickButton m_zeroGyro = new JoystickButton(m_driverController, XboxController.Button.kY.value);
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the trigger bindings
+    m_swerveDrivetrain.setDefaultCommand(new TeleopDrive(m_swerveDrivetrain, 
+      m_driverController, m_translationAxis, m_strafeAxis, m_rotationAxis, fieldRelative, openLoop));
+
     configureBindings();
   }
 
@@ -37,7 +56,7 @@ public class RobotContainer {
    */
   private void configureBindings() {
     // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
-    
+    m_zeroGyro.onTrue(new InstantCommand(() -> m_swerveDrivetrain.resetGyro()));
 
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
     // cancelling on release.
