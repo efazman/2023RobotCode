@@ -23,7 +23,6 @@ import edu.wpi.first.math.util.Units;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-<<<<<<< HEAD
     public static final class SwerveDrivetrainConstants {
         //Declaring CAN ID's for each module
         //Back Left -> Mod # 4
@@ -193,9 +192,9 @@ public final class Constants {
     public static final class JoystickConstants {
         public static final double STICK_DEADBAND = 0.1;
         public static final int DRIVER_PORT_ID = 0;
-=======
+    }
+    
     public static final class IntakeConstants {
         public static final int INTAKE_NEO_ID = 0;
->>>>>>> c8d057a7f05b158f6c0d7141f84c8c19bf398294
     }
 }
