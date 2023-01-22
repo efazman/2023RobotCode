@@ -17,8 +17,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.DriveModes;
 import frc.robot.Constants.SwerveDrivetrainConstants;
-import frc.robot.math.Conversions;
-import frc.robot.util.LoggedTunableNumber;
+import frc.robot.CrevoLib.math.Conversions;
+
 
 public class SwerveDrivetrain extends SubsystemBase {
     public SwerveDriveOdometry m_swerveOdometry;
@@ -230,17 +230,11 @@ public class SwerveDrivetrain extends SubsystemBase {
 
     @Override
     public void periodic(){
+        //UPDATE ODOMETRY
         m_swerveOdometry.update(getYaw(), getModulePositions());
 
-        // gyroIO.updateInputs(gyroInputs);
-        // Logger.getInstance().processInputs("Drive/Gyro", gyroInputs);
 
-        // for (int i = 0; i < 4; i++) {
-        //     moduleIOs[i].updateInputs(moduleInputs[i]);
-        //     Logger.getInstance().processInputs("Drive/Module" + Integer.toString(i),
-        //         moduleInputs[i]);
-        // }
-
+        //UPDATE LOGGER (PERIODIC) -> AdvantageScope Configuration
         Logger.getInstance().recordOutput("Odometry/RobotPose2d", m_swerveOdometry.getPoseMeters());
         Logger.getInstance().recordOutput("Odometry/RobotPose3d", new Pose3d(m_swerveOdometry.getPoseMeters()));
         Logger.getInstance().recordOutput("Yaw/Robot", getAngle());
@@ -270,6 +264,5 @@ public class SwerveDrivetrain extends SubsystemBase {
         Logger.getInstance().recordOutput("Drive/SetpointStates", setpointState);
         SmartDashboard.putNumber("Yaw", getAngle());
 
-       
     }
 }

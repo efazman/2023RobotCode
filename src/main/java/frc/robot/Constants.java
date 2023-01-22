@@ -24,6 +24,11 @@ import edu.wpi.first.math.util.Units;
  */
 public final class Constants {
     public static final class SwerveDrivetrainConstants {
+
+        /*Swerve Drivetrain Construction */
+        public static final boolean FIELD_RELATIVE = true;
+        public static final boolean OPEN_LOOP = true;
+
         //Declaring CAN ID's for each module
         //Back Left -> Mod # 4
         //Back Right -> Mod # 1

@@ -12,9 +12,9 @@ import edu.wpi.first.math.kinematics.SwerveModulePosition;
 import edu.wpi.first.math.kinematics.SwerveModuleState;
 import frc.robot.Robot;
 import frc.robot.Constants.SwerveDrivetrainConstants;
-import frc.robot.defaultconfigs.CTREConfigs;
-import frc.robot.math.Conversions;
-import frc.robot.util.CTREModuleState;
+import frc.robot.CrevoLib.defaultconfigs.CTREConfigs;
+import frc.robot.CrevoLib.math.Conversions;
+import frc.robot.CrevoLib.util.CTREModuleState;
 
 
 public class SwerveModule {

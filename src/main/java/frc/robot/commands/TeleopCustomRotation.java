@@ -3,13 +3,12 @@ package frc.robot.commands;
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.Constants.JoystickConstants;
 import frc.robot.Constants.SwerveDrivetrainConstants;
 import frc.robot.CrevoLib.util.JoystickMods;
 import frc.robot.subsystems.SwerveDrivetrain;
 
-public class TeleopDrive extends CommandBase{
+public class TeleopCustomRotation extends CommandBase {
     private double m_rotation;
     private Translation2d m_translation;
     private boolean m_fieldRelative;
@@ -21,7 +20,7 @@ public class TeleopDrive extends CommandBase{
     private int m_strafeAxis;
     private int m_rotationAxis;
 
-    public TeleopDrive(SwerveDrivetrain swerveDrivetrain, XboxController driverController, int driveAxis, int strafeAxis, int rotationAxis, boolean fieldRelative, boolean openLoop) {
+    public TeleopCustomRotation(SwerveDrivetrain swerveDrivetrain, XboxController driverController, int driveAxis, int strafeAxis, int rotationAxis, boolean fieldRelative, boolean openLoop) {
         m_swerveDrivetrain = swerveDrivetrain;
         addRequirements(m_swerveDrivetrain);
 
@@ -51,7 +50,6 @@ public class TeleopDrive extends CommandBase{
 
       m_translation = new Translation2d(yAxis, xAxis).times(SwerveDrivetrainConstants.MAX_SPEED);
       m_rotation = rAxis * SwerveDrivetrainConstants.MAX_ANGULAR_VELOCITY;
-      m_swerveDrivetrain.drive(m_translation, m_rotation, m_fieldRelative, m_openLoop);
+      m_swerveDrivetrain.driveCustomCenterOfRotation(m_translation, m_rotation, m_fieldRelative, m_openLoop);
   }
-
 }
