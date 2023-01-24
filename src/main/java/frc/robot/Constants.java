@@ -13,6 +13,7 @@ import edu.wpi.first.math.geometry.Translation3d;
 import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.math.trajectory.TrapezoidProfile;
 import edu.wpi.first.math.util.Units;
+import frc.robot.CrevoLib.math.Conversions;
 
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
@@ -145,7 +146,9 @@ public final class Constants {
         /*Open and Closed Loop Ramping*/
         public static final double OPEN_LOOP_RAMP = 0.25;
         public static final double CLOSED_LOOP_RAMP = 0.0;
-    }      
+
+        public static final double ANGLE_ALLOWABLE_CL_ERROR = Conversions.degreesToFalcon(0.5, ANGLE_GEAR_RATIO);
+    }
 
     public static final class LoggingConstants {
         public static final boolean tuningMode = false;

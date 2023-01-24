@@ -33,6 +33,7 @@ public class CTREConfigs {
         angleMotorConfig.slot0.kF = SwerveDrivetrainConstants.ANGLE_F;
         angleMotorConfig.supplyCurrLimit = angleMotorSupplyLimit;
         angleMotorConfig.initializationStrategy = SensorInitializationStrategy.BootToZero;
+        angleMotorConfig.slot0.allowableClosedloopError = SwerveDrivetrainConstants.ANGLE_ALLOWABLE_CL_ERROR;
 
         //Drive Motor Default Configs
         SupplyCurrentLimitConfiguration driveMotorSupplyLimit = new SupplyCurrentLimitConfiguration(
