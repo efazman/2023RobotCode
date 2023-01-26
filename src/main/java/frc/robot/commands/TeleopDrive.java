@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.Constants.JoystickConstants;
 import frc.robot.Constants.SwerveDrivetrainConstants;
-import frc.robot.CrevoLib.util.JoystickMods;
+import frc.robot.CrevoLib.io.JoystickMods;
 import frc.robot.subsystems.SwerveDrivetrain;
 
 public class TeleopDrive extends CommandBase{

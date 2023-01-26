@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants.JoystickConstants;
 import frc.robot.Constants.SwerveDrivetrainConstants;
-import frc.robot.CrevoLib.util.JoystickMods;
+import frc.robot.CrevoLib.io.JoystickMods;
 import frc.robot.subsystems.SwerveDrivetrain;
 
 public class TeleopCustomRotation extends CommandBase {
