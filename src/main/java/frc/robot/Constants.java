@@ -67,10 +67,10 @@ public final class Constants {
 
         /*Motor Invert Constants*/
         //Drive Motor Invert
-        public static boolean FRONT_RIGHT_DRIVE_INVERT = false;
-        public static boolean FRONT_LEFT_DRIVE_INVERT = false;
-        public static boolean BACK_LEFT_DRIVE_INVERT = false;
-        public static boolean BACK_RIGHT_DRIVE_INVERT = false;
+        public static boolean FRONT_RIGHT_DRIVE_INVERT = true;
+        public static boolean FRONT_LEFT_DRIVE_INVERT = true;
+        public static boolean BACK_LEFT_DRIVE_INVERT = true;
+        public static boolean BACK_RIGHT_DRIVE_INVERT = true;
 
         //Angle Motor Invert
         public static boolean FRONT_RIGHT_ANGLE_INVERT = false;
@@ -123,7 +123,7 @@ public final class Constants {
 
         /*Swerve Gear Ratios*/
         //From SDS Website
-        public static final double DRIVE_GEAR_RATIO = (-6.75/1.0);
+        public static final double DRIVE_GEAR_RATIO = (6.75/1.0);
         public static final double ANGLE_GEAR_RATIO = (-150.0/7);
         
 
