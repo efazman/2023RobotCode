@@ -18,8 +18,8 @@ import frc.robot.Constants.JoystickConstants;
 import frc.robot.Constants.SwerveDrivetrainConstants;
 import frc.robot.Constants.VisionConstants;
 import frc.robot.commands.TeleopDrive;
-import frc.robot.subsystems.PoseEstimator;
-import frc.robot.subsystems.SwerveDrivetrain;
+import frc.robot.subsystems.drivetrain.SwerveDrivetrain;
+import frc.robot.subsystems.vision.PoseEstimator;
 
 
 public class RobotContainer {

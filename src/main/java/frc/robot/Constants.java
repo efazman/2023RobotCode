@@ -148,7 +148,7 @@ public final class Constants {
         public static final double OPEN_LOOP_RAMP = 0.25;
         public static final double CLOSED_LOOP_RAMP = 0.0;
 
-        public static final double ANGLE_ALLOWABLE_CL_ERROR = Conversions.degreesToFalcon(0.5, ANGLE_GEAR_RATIO);
+        public static final double ANGLE_ALLOWABLE_CL_ERROR = Conversions.degreesToFalcon(3.0, Math.abs(ANGLE_GEAR_RATIO));
     }
 
     public static final class LoggingConstants {

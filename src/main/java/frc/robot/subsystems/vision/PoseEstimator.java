@@ -1,4 +1,4 @@
-package frc.robot.subsystems;
+package frc.robot.subsystems.vision;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -26,6 +26,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.PoseEstimationConstants;
 import frc.robot.Constants.SwerveDrivetrainConstants;
 import frc.robot.Constants.VisionConstants;
+import frc.robot.subsystems.drivetrain.SwerveDrivetrain;
 
 public class PoseEstimator extends SubsystemBase {
     //Declares the PhotonCamera we use (Limelight 2+)
